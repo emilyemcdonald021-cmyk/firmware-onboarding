@@ -8,8 +8,14 @@ namespace BMEConstants
     // ---- CONFIRM THESE 3 WITH THE SHOP (they depend on their wiring) ----
     constexpr uint8_t I2C_ADDRESS = 0x76;     // BME280 I2C address (0x76 or 0x77)
     constexpr uint8_t SPI_CS_PIN = 10;        // chip-select pin for the SPI build
-    constexpr uint8_t LED_PIN = 8;            // LED output pin (NOT 13 in SPI mode: 13 is SPI clock)
+    constexpr uint8_t LED_PIN = LED_BUILTIN;  // on-board "L" LED (pin 13 on the Uno)
     // ---------------------------------------------------------------------
+
+    // SPI data pins. Same as the Uno's hardware SPI pins, but the SPI build uses
+    // software SPI so pin 13 (SCK) can double as the on-board LED.
+    constexpr uint8_t SPI_MOSI_PIN = 11;
+    constexpr uint8_t SPI_MISO_PIN = 12;
+    constexpr uint8_t SPI_SCK_PIN = 13;
 
     constexpr uint8_t I2C_ADDRESS_ALT = 0x77; // fallback address tried if the first fails
 

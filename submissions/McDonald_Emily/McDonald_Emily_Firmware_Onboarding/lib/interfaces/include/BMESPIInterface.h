@@ -3,8 +3,9 @@
 #include <etl/singleton.h>
 #include "BMEConstants.h"
 
-// Interface: talks to the BME280 over hardware SPI and stores the data.
-// Uno SPI pins: MOSI=11, MISO=12, SCK=13, CS=BMEConstants::SPI_CS_PIN.
+// Interface: talks to the BME280 over SPI and stores the data.
+// Uses software SPI on pins CS=10, MOSI=11, MISO=12, SCK=13 (see BMEConstants.h)
+// so that pin 13 stays free to drive the on-board LED.
 class BMESPIInterface
 {
 public:
